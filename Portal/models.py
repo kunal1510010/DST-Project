@@ -15,6 +15,7 @@ class AuthUser(models.Model):
     is_active = models.BooleanField(default=False)
     address = models.CharField(null=True, max_length=100)
     department_id = models.ForeignKey(Department, on_delete=models.CASCADE)
+
     def __str__(self):
         return str(self.user_id)
 
@@ -48,7 +49,6 @@ class Department(models.Model):
 
     department_id = models.AutoField(primary_key=True, null=False)
     department_name = models.CharField(max_length=30, null=False)
-
 
     def __str__(self):
         return  str(self.department_name)
