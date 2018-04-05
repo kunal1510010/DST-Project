@@ -56,6 +56,9 @@ class Department(models.Model):
     
 class AuthViewer(models.Model):
     
-    authid = models.AutoField(primary_key=True, null=False)
+    auth_id = models.AutoField(primary_key=True, null=False)
     question_id = models.ForeignKey(PortalQuestion, on_delete=models.CASCADE)
     department_id = models.ForeignKey(Department, on_delete=models.CASCADE)
+
+    def __str__(self):
+       return  str(self.auth_id)
